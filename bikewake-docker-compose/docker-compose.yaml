@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  oracle-db:
+    image: bikewake/ora-database:19.3.0-ee
+    container_name: ora-database
+    environment:
+      - ORACLE_SID=ORCLCDB
+      - ORACLE_PWD=bikewake
+      - ORACLE_PDB=ORCLPDB1
+      - ORACLE_CHARACTERSET=AL32UTF8
+    ports:
+      - "1521:1521"
+      - "8080:8080"
+    volumes:
+      - ora-bikewake-data:/opt/oracle/oradata
+
+volumes:
+  ora-bikewake-data:
+ 
+    
