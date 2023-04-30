@@ -74,15 +74,15 @@ Now open the third terminal window verify:
 
 and see running container with name ora-database, now let's search for sqlnet.ora file in running container:
 
-### `docker exec ora-database ls ../../opt/oracle/oradata/dbconfig/ORCLCDB`
+     `docker exec ora-database ls ../../opt/oracle/oradata/dbconfig/ORCLCDB`
 
 Let's review sqlnet.ora file:
 
-### `docker exec ora-database cat  ../../opt/oracle/oradata/dbconfig/ORCLCDB/sqlnet.ora`
+     `docker exec ora-database cat  ../../opt/oracle/oradata/dbconfig/ORCLCDB/sqlnet.ora`
 
 Apply DISABLE_OOB=ON in sqlnet.ora file:
 
-### `docker exec ora-database "/bin/sh" -c "echo DISABLE_OOB=ON>>//opt/oracle/oradata/dbconfig/ORCLCDB/sqlnet.ora"`
+     `docker exec ora-database "/bin/sh" -c "echo DISABLE_OOB=ON>>//opt/oracle/oradata/dbconfig/ORCLCDB/sqlnet.ora"`
 
 In the first terminal window where docker-compose is running press Ctrl-C to stop running container, You can remove container also with
 
