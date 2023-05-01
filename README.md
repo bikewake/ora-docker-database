@@ -120,6 +120,6 @@ Delete Docker image builder scripts:
 ### `./clean-ora-builder-scripts-folder.sh`
 
 
-## Step eight: Turn off computer, sleep for eight hours, and WAKE up for next chapter tomorrow
+## Step eight: Turn off computer, sleep for eight hours, and WAKE up for the next chapter tomorrow
 
 [Chapter 2.: Automatic execution scripts on Startup/Setup Oracle Database](startup-setup-ora-bikewake-scripts)
