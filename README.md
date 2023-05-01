@@ -1,10 +1,10 @@
-# Getting Started with Docker Oracle Database Image Builder
+# Cahpter 1.: Getting Started with Docker Oracle Database Image Builder
 
 This project is based on [Github Oracle Docker Image Builder Scripts](https://github.com/oracle/docker-images/tree/main/OracleDatabase/SingleInstance).
 
 Known issue for Oracle database docker container [ORA-12637: Packet receive failed](https://github.com/oracle/docker-images/blob/main/OracleDatabase/SingleInstance/FAQ.md#ora-12637-packet-receive-failed).
 
-Prerequisite [Docker](https://www.docker.com/) and [GitBash](https://git-scm.com/downloads)
+Prerequisite: [Docker](https://www.docker.com/) and [GitBash](https://git-scm.com/downloads)
 
 ## Step one: download Oracle Docker builder scripts
 
@@ -74,15 +74,15 @@ Now open the third terminal window verify:
 
 and see running container with name ora-database, now let's search for sqlnet.ora file in running container:
 
-     `docker exec ora-database ls ../../opt/oracle/oradata/dbconfig/ORCLCDB`
+     docker exec ora-database ls ../../opt/oracle/oradata/dbconfig/ORCLCDB
 
 Let's review sqlnet.ora file:
 
-     `docker exec ora-database cat  ../../opt/oracle/oradata/dbconfig/ORCLCDB/sqlnet.ora`
+     docker exec ora-database cat  ../../opt/oracle/oradata/dbconfig/ORCLCDB/sqlnet.ora
 
 Apply DISABLE_OOB=ON in sqlnet.ora file:
 
-     `docker exec ora-database "/bin/sh" -c "echo DISABLE_OOB=ON>>//opt/oracle/oradata/dbconfig/ORCLCDB/sqlnet.ora"`
+     docker exec ora-database "/bin/sh" -c "echo DISABLE_OOB=ON>>//opt/oracle/oradata/dbconfig/ORCLCDB/sqlnet.ora"
 
 In the first terminal window where docker-compose is running press Ctrl-C to stop running container, You can remove container also with
 
@@ -96,3 +96,30 @@ You should see message DATABASE IS READY TO USE! much sooner now, try Test with 
 
 ![workflow-1](screenshots/ora-success-connect.png)
 
+## Step seven: Clean up
+
+Exit SQL Developer, In the first terminal window where docker-compose is running press Ctrl-C to stop running container,
+and  container also with
+
+### `docker-compose down`
+
+Change folder back
+
+### `cd ..`
+
+Delete docker images:
+
+### `./clean-ora-bikewake-docker-image.sh`
+
+Delete database docker volume data:
+
+### `./clean-ora-bikewake-docker-volume.sh`
+
+Delete Docker image builder scripts:
+
+### `./clean-ora-builder-scripts-folder.sh`
+
+
+## Step eight: Turn off computer, sleep for eight hours, and WAKE up for next chapter tomorrow
+
+[Chapter 2.: Automatic execution scripts on Startup/Setup Oracle Database](startup-setup-ora-bikewake-scripts)
