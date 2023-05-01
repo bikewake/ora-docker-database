@@ -1,4 +1,4 @@
-# Cahpter 1.: Getting Started with Docker Oracle Database Image Builder
+# Chapter 1.: Getting Started with Docker Oracle Database Image Builder
 
 This project is based on [Github Oracle Docker Image Builder Scripts](https://github.com/oracle/docker-images/tree/main/OracleDatabase/SingleInstance).
 
