@@ -99,11 +99,11 @@ You should see message DATABASE IS READY TO USE! much sooner now, try Test with 
 ## Step seven: Clean up
 
 Exit SQL Developer, In the first terminal window where docker-compose is running press Ctrl-C to stop running container,
-and  container also with
+and  remove container with:
 
 ### `docker-compose down`
 
-Change folder back
+Change folder back:
 
 ### `cd ..`
 
